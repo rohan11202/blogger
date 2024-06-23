@@ -11,7 +11,7 @@ export const userRouter = new Hono<{
     }
 }>();
 
-userRouter.post('signup', async (c) => {
+userRouter.post('/signup', async (c) => {
     const body = await c.req.json();
     const { success } = signupInput.safeParse(body);
     if (!success) {
@@ -33,6 +33,7 @@ userRouter.post('signup', async (c) => {
             }
         });
         const jwt = await sign({ id: user.id }, c.env.JWT_SECRET);
+        console.log({jwt});
         return c.json({ jwt });
     } catch (e) {
         c.status(403);
@@ -40,7 +41,7 @@ userRouter.post('signup', async (c) => {
     }
 })
 
-userRouter.post('signin', async (c) => {
+userRouter.post('/signin', async (c) => {
     const body = await c.req.json();
     const { success } = signinInput.safeParse(body);
     if (!success) {

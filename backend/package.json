@@ -4,14 +4,14 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
-    "@p4nda11202/blogger-common": "^1.0.0",
-    "@prisma/client": "^5.15.0",
+    "@p4nda11202/blogger": "^1.0.0",
+    "@prisma/client": "^5.15.1",
     "@prisma/extension-accelerate": "^1.1.0",
-    "hono": "^4.2.8",
-    "prisma": "^5.14.0"
+    "hono": "^4.4.7",
+    "prisma": "^5.15.1"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240403.0",
-    "wrangler": "^3.47.0"
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "wrangler": "^3.61.0"
   }
 }
